@@ -2,10 +2,10 @@
 # target_object in all R files within the working directory
 
 # Define the target string name
-target_string <- "ui"
+target_string <- "store_text_input"
 
 # List all R files in the Shiny app directory and its subdirectories
-r_files <- list.files(path = ".", pattern = "\\.R$", recursive = TRUE)
+r_files <- list.files(path = ".", pattern = "\\.R|py$", recursive = TRUE)
 
 # Initialize a variable to track whether the object is found
 string_found <- FALSE
@@ -23,5 +23,5 @@ for (file in r_files) {
 
 # Print a message if the string is not found
 if (!string_found) {
-  cat("String", target_object, "not found in any R files.\n")
+  cat("String", target_string, "not found in any R files.\n")
 }
